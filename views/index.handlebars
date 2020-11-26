@@ -1,0 +1,30 @@
+<div class="jumbotron">
+    <h1 class="display-3">Bem-vindo ao Blog</h1>
+    <p class="lead mx-4">Um exemplo de blog criado com 
+    <img src="https://img.icons8.com/color/452/nodejs.png" class="mx-3" width="120" alt="NodeJS">
+    + <img src="https://img.icons8.com/color/344/mongodb.png" class="mx-2" width="100" alt="MongoDB">
+    </p>
+
+    <hr class="mt-4">
+    <p>Um jeito fácil de criar postagens</p>
+    <a class="btn btn-primary btn-lg" href="/usuarios/registro" role="button">Crie uma Conta</a>
+</div>
+
+<hr>
+
+<h2>Postagens Recentes</h2>
+
+{{#each postagens}}
+<div class="card mt-4">
+    <div class="card-body mt-2">
+        <h3>{{titulo}}</h3>
+        <p>{{descricao}}</p>
+        <a href="/postagem/{{slug}}"><button class="btn btn-secondary">Leia Mais...</button></a>
+        <hr>
+        <small>Categoria: {{categoria.nome}}</small>
+        <small>Data de publicação: {{data}}</small>
+    </div>
+</div>
+{{else}}
+    <h5>Nenhuma Postagem</h5>
+{{/each}}
